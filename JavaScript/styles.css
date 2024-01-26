@@ -1,0 +1,19 @@
+.grand {
+    background-color: brown;
+    height: 90vh;
+    display:flex;
+  }
+
+  .parent {
+    background-color: aquamarine;
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+    justify-content: center;
+  }
+
+
+
+  .oddnumclass {
+    font-family: Arial, Helvetica, sans-serif;
+  }

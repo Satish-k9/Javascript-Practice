@@ -1,0 +1,37 @@
+.main {
+    background-color: brown;
+    height: 600px;
+    width: 600px;
+    display:flex;
+    
+}
+
+.parent {
+    background-color: burlywood;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    
+}
+
+/* //================================The above is for center align of the divs================ */
+
+/* //================================The  below is to move the div from top left to bottom right================ */
+
+/* .main {
+    background-color: brown;
+    height: 600px;
+    width: 600px;
+    display:flex;
+    
+}
+
+.parent {
+    background-color: burlywood;
+    height: 300px;
+    width: 300px;
+    margin-left: auto;
+    margin-top: auto;
+    border-radius: 300px;
+    
+} */

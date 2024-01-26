@@ -1,0 +1,14 @@
+In a warehouse, a manager would like to sort the items in the stock. Given an array of n item values, sort the array in ascending order,
+first by the number of items with a certain value, then by the values themselves.
+Input - [4,5,6,5,4,3]
+Output - [4,4,5,5,3,6]
+
+solving the code with higher numbber of frequency
+
+
+how to call two api call at the same time using promises   --- promise.all()
+arrow function and normal function
+promises
+parent to child communication
+foreach and for differences
+rest and spread

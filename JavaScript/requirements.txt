@@ -1,0 +1,491 @@
+Primitives are passed/copied by value
+Objects are passed/copied by reference
+
+
+Function constructor....
+
+never put the prototype thing inside the function constructor. everytime the constructor is called the prototype will also be readdressed. 
+huge time
+
+
+
+map will return an newly operted array of the same length but in case of foreach 
+it will be undefined as it does not return any array it only operates on each element of the array
+
+map() -> returns the array of the same length after the operation has been done on it
+
+syntax =>  array.map(num =>{
+    return num*5;
+});
+
+
+filter() ->  returns an array after tthe filter logic has been applied and then returns the array with diffrent length
+
+syntax =>  array.filter(num=>{
+    if (num % @ == 0){
+        return num;                      // returns the new array after filtering with reduction in size
+    }
+});
+
+
+reduce()  ->  reduce takes in 2 values (accumulator, index ) and a function() as an argument, the num is the accumulator 
+            which is 0 and the index consists of the 1st number of the aaray
+            so while we perform the operation it moves the index values to ACCUMULATOR AND INDEX takes up the next value of the array, 
+            and then the output is produced in for of a single value.
+
+
+syntax ->  arr.reduce((accumulator, index) =>{
+    return accumulator + index;
+},0)
+
+for vs for each ======================================
+
+syntax is diffrent in both
+
+to iterate over an array or object till the length of it
+ex     for (key in obj)
+
+to iterate on each element of the array we need forEach loop
+
+
+Object.assign    is >>>> faster than JSON.stringfy    , copying the object
+
+JSON.stringfy is used generaaly for storing the data in localstorage    and to get back the data in object format we use JSON.parse()
+
+
+<b> and <i> are physical tags which tells the browser how to display the content  enclosed in the physical tags
+
+<strong> and <em> are logical tags which tells the browser that the text or content is important than othe texts
+
+
+selectors in CSS 
+1. class  (.)
+2. id  (#)
+3. group (h1,h2,h3,div)
+4. universal  (*)
+
+
+
+arrow function-----
+
+no function keyword necessary 
+do not have this keyword
+the code syntax is shorter
+hoisting is a problem ---- cannot be accessed before initialization 
+we dont have access to the args // no arguments can be accessed
+
+normal function----
+we can print the args we have passed
+this keyword can be used
+code is little more
+
+
+
+//===========================Debounce================ ex. filpkart search 
+
+it limits the execution of a function call and waits for a certain amount of time before running it again . 
+using lodash and using _.debounce(() => {},800)
+
+//============================throttling====================
+
+throttling is a technique to limit the execution of a event handler function 
+even when this event triggers cont due to user action .    user action my be scroll.... resizing etc.   
+ inifnite scroll can be implemented which can determine that if the user content is nearly 500 px from the bottom
+
+
+it sets the threshold time limit and the it triggers the event after certain time
+
+
+=======================================cloning  Object================================
+
+we can use spread operater to clone, it creates a shallow copy
+
+else we can use the latest Object.assign(object).    to clone the object.
+
+
+
+JS libraries used :    jquery and lodash
+angular libraries used : NG-Bootstrap, angular material
+
+
+
+===================================setTimeout vs setinterval=====================
+
+SetTimeout() Method
+The setTimeout Javascript method is used to call a function after a certain period of time. 
+The time after which the function will be called is given by the user in milliseconds.
+
+
+SetInterval() Method
+The setInterval Javascript method is used to call a function repeatedly at a specified interval of time.
+This time interval at which the function will be called is provided by the user in milliseconds.
+
+
+
+
+========================================Angular===============================
+
+THE ENTRY POINT OF THE APPLIATION IS index.html . AND INDEX.HTML COSNISTS OF THE MAIN SELECTOR OF The APP <APP-ROOT> ,</APP-ROOT>
+============Component===============
+
+A component is a reusable UI logic that can be loaded inside HTML / inside a browser.
+It compries of 2 parts : 1. VIEW      2. logic
+Component consist of a logic and UI 
+
+
+=======Decorator===========
+
+A decoreator in angular tell the angular app that what kind of class it is     if @component is there its a componet class,
+if its @ngModule its an angular module  
+
+1. @Component => denotes a decorator ,  It conisits of HTML , stylesheet and selector(ex- app-root)
+        Component = HTML,Css,logic
+
+2. We use the selector , if we want to load the contents of one component into another HTML .The HTML CSS and logic is 
+rendered on the HTML page by using the selector.
+         EX:    <app-root> </app-root> (Its always mentioned in the index,htmll file)
+
+
+custom directives- 
+The host element is the element on which we attach our directive or component. Remember components are directives with a view (template)
+
+@Hostbinding and @Hostlistener are two decorators in angular  that can be helpful in custom directicves 
+
+@Hostbinding lets you set the properties on the element or component that hosts the directive. we are changing the color property or 
+appearance stuff. apply some css.
+@Hostlistener lets you listen for the events on the host or elements. Item listening to the directive
+
+@HostBinding('style.border') border: string;
+
+@HostListener('mouseleave') 
+  onMouseLeave() {
+    this.border = '';
+    console.log("Mouse Leave")
+  }
+
+
+=================Directive========================
+
+1. Directive is the angular syntax that we write inside HTML.  
+2. Additional behavior in the HTML.           Ex - (click)
+
+
+======================== types of directives========================
+there are 3 types of directives   SAC  - Structural, Attribute, Component
+
+1. Component - selector name is called and the html for the component is mentioned
+2. Structural - Changes the DOM elements bny adding or removing the DOM elements   ----- * ngFor   ---- it has got a '*'   ex . ngIf , ngSwitch
+3. Attribute - It changes the behaviour or appearence of the elements, component or other directive  - [(   ngModel)] or (click) is also a directive , as its binded to a method
+
+
+==========Template==================
+
+A template is an HTML file in which we can use the angular directives/ angular syntax
+
+
+
+================Modules===============
+
+A group of components is called a module.   ex Customer module has many customer operatiion related components
+
+@NgModule is the module decorator and the class inside is the module class
+
+All the modules are to be added in side the "declarations"    component1, component2 etc....
+Inside "bootstrap" we will define which component will be execcuted first.
+
+
+
+================================================Kicking off the app========================================
+
+----------------the first UI to run is index.html------ 
+index.html call sthe main.ts 
+main.ts finds out that the module is to be started
+inside module we had bootstrap which tells which component to be loaded first 
+and that compoinent will be loaded inside the index.hml  as it hass been mentioned with the selector
+
+
+==============================Binding==========================
+
+
+Data binding in angular defines how the view and  componet communicate with each other
+
+we need to add FormsModule for binding in the app module inside the "imports"
+
+ngModel is used to bind data .
+we use [(ngmodel)] to bind the data . this is called a two way binding . data flows from both ways
+
+[] says the data can flows form component to the UI. Its a property binding
+() signifis the data flows from UI to the component . Its called event binding.
+
+========================Interpolation===================
+Data flows from controller to the view 
+
+interpolation mean expression which get mixed with HTML tags
+to display interpolation  binding we use {{}}
+
+===============================@Injectable is used to inject service class in component==================================
+
+We use the @Inject(custom) class as a service , which allows angular to inject it into the component  as a dependency.
+
+WE USE DEPENDENCY INJECTION TO USE THE SERVICE INISDE A COMPONENT
+
+rather than creating a new instance inside the component,    we inject it from outside inside the consturctor 
+
+TO IMPLEMENT DEPENDENCY INJECTION IN ANGULAR , WE NEED TO USE THE providers attribute which is belonging to the
+ @NgModule decorator/ metadata
+
+============================= Decorator =======================================================
+
+A decorator says to angular that what kind of class it is 
+ex  @component --- if i have a emloyeeeditcomponet @componet decorator denotes that its a component class   
+same for module @NgModule inside NgModule we define the module class             ................. same ans for annotatuions and meta data
+
+================================templates======================
+
+templates are html view of angular apploication . we can write our directives inside the template 
+
+=====================================data Binding-========================
+
+Data binding in angular defines that how a view and componet communicate with each other
+
+{{}}    interpolation /expression binding   ==== data flows from controller to the view and we can put that into HTML
+[]    property binding ------------   flows from controler to view
+()    event binding ---------------------   event tracking from view to the controller
+[()]    two way binding ------------------ it works both ways       instantaneous change in data reflects in the HTML and vice versa
+
+
+=============================================aNGULAR ARCHITECTUERE========================================================
+
+
+1. Template
+2. components
+3. Modules --> consists of multiple components 
+4. binding between templatesa nd components
+5. templates have directives which help us manupulate the Dom elements and change the behaviour
+6. Service --> common logic 
+7. Dependency Injection --> services are injected using @Injectable decorator into the component
+
+
+===================================Routing========================
+A single page application is an application whre the base html is constsant and the other urls load on the others 
+Routingg defines the navigation of the angular appliction . if we want to move from one page to another page without refreshing 
+or reloading the whole page . we use Routing
+
+In routing we need to define the route collection to load the url and page
+it has 2 thing      1. URL    2. The component to be loaded     
+{path : 'Home', component : HomeComponent}
+
+
+In Html we need to define the <router-outlet>   , it is the palace where your page will be loaded .
+
+we can define [routerLink] in the HTML as a link i.e. within the <a> tag or <button>    .
+The link binded to the routerLink will be loaded inside the router-outlet 
+
+
+If we want to do routing from component  we could use        this. route.navigate['URL'] , where route is a variable of type route defined in constructor
+
+
+
+
+===========================Lazy loading ===================
+
+Lazy loading means on demand loading . The HTML , css or js of the required page is not called umtil the call has been made. 
+Component that are not required are not loaded until required
+
+for lazy loading implementation 
+
+We neeed to divide the projects into modules
+The module we want to lazy load , we need to include the module inside the loadchildren()   inside the routes collection
+
+ex :   {path : 'Home', component : HomeComponent}
+        {path : 'Customer ', loadchildren: 'URL'}
+
+
+
+
+================================================SERVICES=================================
+
+An application can have many modules  and within that modules there are many components 
+
+so if we want to share the common functionalities across the modules we would create a service,    Ex : For Http calls , Loggers
+
+
+
+==================================how to implement HTTP==================================
+
+To implememt HTTP we need to 
+1. Import the HTTPClientModule at the module level 
+2. we need to import the HTTPClient from angular/common/http at the component level
+3. We need to create an object of the HTTPClient using the dependency injection 
+4. after that we can make the get , post, put using HTTPClient
+
+
+
+
+======================Component to component data sharing======================
+
+parent to child   -> @Inpur Decorator
+child to parent   -> @Output and EventEmitter    @Output event = new EventEmitter <string>();
+sharing data to diffrent components    -> services   (inject it in the class constructor creating a service object and use),
+we need to use the getter and setter functions to send  and recieve the data
+
+
+
+====================template driven form=========================
+
+in a template driven form the field  "name" is required to bind the "ngModel" .  without name ngModel cant bind. 
+
+=========================================ng-container===============================
+The <ng-container> allows us to use structural directives without any extra element,
+ making sure that the only DOM changes being applied are those dictated by the directives themselves.
+
+This not only increases performance (even so slightly) since 
+the browser ends up rendering less elements but can also be a valuable asset in having cleaner DOMs and styles alike.
+
+<ng-container *ngIf="condition">
+  …
+</ng-container>
+
+
+================================================Angular ARCHITECTUERE==============================
+
+1. Template   this view talks with component
+2. Component   a group of componet is put into modules
+3. Modules
+4. Bindings   for communicating b/w compoinent
+5. directives    to perform operation
+6. services    the services are injected in the component , which helps in sharing common logic across the project
+7. Dependency injection     it helps to inject the instances across the constructor
+
+
+
+================================================SPA===========================================
+
+A single page application means the main ui / the common UI gets loaded once and the needed ui is loaded as per demand 
+
+to Implement SPA we would need to use the angular routing 
+
+export const ROutes = [
+    {path : '', component : the component}
+    {path : '', loadChildren : 'Url of the lazy module#THEMODULENAME'}
+]
+
+
+to implement route we need the collection of routes 
+1. which url will go to which component 
+2. we need routerlinks in the HTML to where the navigain will load
+3. we would need the router outlet where the content will be loaded
+
+if we want to do routing from the TS file/ componet we need to define it as    this.router.navigate[URL]
+
+==================================================@NgModule===========================================
+To bootstrap our angular application we have to pass it inside the main.ts file
+
+The NgModule decorator is a single meta data object , whose properties describe the module
+It consists of :
+
+declarations - consist of the components, directives and pipes
+imports - modules that re required to use the application    , browser modules , router module
+providers - before we needed to add the Services , Authguards in angular , in latest its not required
+bootstrap - the kick off component
+
+
+======================================LAzy loading==========================
+we will create a module . and it will be triggered only whenthe path is visited.
+to implement lazy loading we need to divide the projects into modules
+
+and we need to use loadChildren in the routes collection to define the lazy loading module
+
+
+======================= pipes===============================
+pipes are used to transorm data into a particular type and then presented in the template   ex: date , json, time,week, month etc
+
+we also have custom pipes  :  pure pipes and impure pipes
+impure pipes (async pipe is also impure) - when something gets changed in the dom the whole page gets reloaded (avooid using impire pipes)
+so we use pure -  whenever the input data gets changed , the filter / pipe will trigger
+
+
+
+======================display============================
+display: none; is commonly used with JavaScript to hide and show elements without deleting and recreating them
+display:none turns off the layout of the elements, so they are not rendered
+visibility:hidden hides the elements without changing their layouts
+opacity:0 causes the elements to be very transparent but users can still interact with them
+
+
+Can I have multiple ng modules inside an angular app ?
+While lazy loading we create a module so that time a ngmodule section is created 
+
+
+
+==============================promise======================
+
+limitations :    when we use promise to resolve multiple tasks , suppose simulatnesylsy i want to get all the promises resolved 
+and then perform a task  we would use promise.all([p1,p2,p3]),  if any on eof the promise fails it will return back .
+
+
+==========================obseervables=========================
+
+observavbles are used to acually handle the fault staht promise has 
+it is a stream of data . it has got 3 states ->  next, error, complete
+Next
+The observer’s next method defines how to process the data sent by the observable.
+
+Error
+The observer’s error method handles the error sent by the observable.
+
+Complete
+The observer’s complete() callback specifies the action to take when the observable has completed producing and emitting data.
+
+const vowels$ = new Observable(observer => {
+  // Produce data
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  // Send values
+  for (let letter of vowels) {
+    observer.next(value);
+  }
+ 
+  // Send complete notification
+  observer.complete();
+});
+
+observables do not work until they are subscribed.
+and observables cna slo be unsubscribed when we do not need it.
+
+
+
+
+
+
+
+object destructurings
+closures
+rest and spread operator   --- done
+pollyfills
+ng containeer /// if we want to use ng if and ngfor togrther  -----------done
+trackby in ng for  -----------------------done
+forroot for childguards
+resolve guard
+create own directive 
+host listner host Binding
+why constructor runs first in angular
+@injectible
+async pipe --- problem ---> we can create a subject and we can directly subscribe the subject in the template without
+                            involving the component the problem is ... whenever we do change in the component
+                            it will try to get the latest value from the subscription it automatically subscribed
+subjects -
+grand parent to child component data pasing    we need to subscrobe it inside the constructor and we use .next() to pass the data
+
+pure pipe and impure pipe
+
+how to improve performance in angular app
+
+---> lazy loading should be used
+---> we should not use impure pipes
+-----> tracky used
+-----> unsubscribe in the ngdestroy
+------> we should us trackby
+----->  parent to child rel  we should use onpush() on child when something changes in parent the child also gets new rendered
+        because reference changes in the parent, so we used onchange() in child
+

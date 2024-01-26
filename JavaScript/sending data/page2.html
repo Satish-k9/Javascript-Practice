@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        window.onload = function () {
+            var value = localStorage.getItem("myValue");
+
+            //Display the value on the page
+            document.getElementById('value-recieved').innerHTML = value;
+
+        }        
+    </script>
+</head>
+
+<body>
+    <h1>Page 2</h1>
+    <b>
+        <p id="value-recieved"></p>
+    </b>
+</body>
+
+</html>
