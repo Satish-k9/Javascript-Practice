@@ -1,0 +1,48 @@
+.layout {
+    display : flex; 
+    width: 500px;
+    height: 500px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+
+.header{
+    height :20%;
+}
+
+.content {
+    display: flex;
+    height: 300px;
+}
+
+.sidebar {
+    width : 25%;
+}
+
+.article {
+    width: 75%;
+}
+
+.footer {
+    height :20%
+}
+
+
+.layout >.right {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+
+.aside-1, .aside-2, .aside-3 {
+    height: 167px;
+}
+
+
+
