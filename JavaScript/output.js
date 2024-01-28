@@ -961,3 +961,13 @@ x.forEach(ele => {
     console.log(ele);
   }
 });
+
+//=========================================================
+
+var num = 56;
+
+var arr = function() {
+   console.log(num);
+   var num = 45;
+}
+arr();
