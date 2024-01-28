@@ -971,3 +971,47 @@ var arr = function() {
    var num = 45;
 }
 arr();
+
+//========================================
+
+function foo() {
+  console.log(1);
+} 
+
+var foo = 3
+function foo(){
+  console.log(2);
+}
+foo();
+
+//================================================
+
+var n = 10;
+function demo(){
+    console.log(n);
+}
+
+ function demo1(){
+    var n = 20;
+    // console.log(n)
+    demo();
+ }
+
+ demo1();
+
+
+ //==============================================
+
+hello();
+
+var hello = function(){
+    console.log("Function Expression");
+}
+
+hello();
+
+function hello(){
+    console.log("Function Statement");
+}
+
+hello();
